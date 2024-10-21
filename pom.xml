@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>book-management</artifactId>
+	<artifactId>adopting-sitting-pets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>book-management</name>
 	<description>Modulith Hexagonal</description>
