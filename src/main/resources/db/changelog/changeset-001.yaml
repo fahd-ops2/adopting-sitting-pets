@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001
+      author: fahd
+      changes:
+        - createTable:
+            tableName: pets
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: breed
+                  type: VARCHAR(255)
+              - column:
+                  name: age
+                  type: VARCHAR(255)
+              - column:
+                  name: imageUrl
+                  type: VARCHAR(255)

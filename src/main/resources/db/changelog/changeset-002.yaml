@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002
+      author: fahd
+      changes:
+        - createTable:
+            tableName: sitters
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: experience
+                  type: VARCHAR(255)
+              - column:
+                  name: location
+                  type: VARCHAR(255)
+              - column:
+                  name: imageUrl
+                  type: VARCHAR(255)
