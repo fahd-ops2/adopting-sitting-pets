@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  mariadb:
+    image: mariadb:10.5
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: adopting_devdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
+    networks:
+      - adopting-net
+
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: adopting-app
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/adopting_devdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+      SPRING_LIQUIBASE_CHANGELOG: classpath:db/changelog/db.changelog-master.yaml
+    networks:
+      - adopting-net
+    entrypoint: ["sh", "-c", "sleep 30 && java -jar /app/petapp.jar"]
+
+networks:
+  adopting-net:
+    driver: bridge
+
+volumes:
+  mariadb_data:
