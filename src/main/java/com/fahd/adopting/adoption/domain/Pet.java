@@ -1,4 +1,4 @@
-package com.fahd.adopting.pet.domain;
+package com.fahd.adopting.adoption.domain;
 
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package com.fahd.adopting.sitter.domain;
+package com.fahd.adopting.sitting.domain;
 
 import java.util.List;
 

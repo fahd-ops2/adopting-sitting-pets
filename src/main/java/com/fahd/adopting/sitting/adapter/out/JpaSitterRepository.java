@@ -1,4 +1,4 @@
-package com.fahd.adopting.sitter.adapter.out;
+package com.fahd.adopting.sitting.adapter.out;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,16 +1,14 @@
-package com.fahd.adopting.pet.adapter.out;
+package com.fahd.adopting.adoption.adapters.out;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "pets")
 public class PetEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column

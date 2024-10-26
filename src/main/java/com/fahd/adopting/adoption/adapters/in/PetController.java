@@ -1,7 +1,7 @@
-package com.fahd.adopting.pet.adapter.in;
+package com.fahd.adopting.adoption.adapters.in;
 
-import com.fahd.adopting.pet.domain.Pet;
-import com.fahd.adopting.pet.domain.PetService;
+import com.fahd.adopting.adoption.domain.Pet;
+import com.fahd.adopting.adoption.domain.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

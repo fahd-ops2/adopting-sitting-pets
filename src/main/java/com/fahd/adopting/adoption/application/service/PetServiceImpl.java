@@ -1,12 +1,11 @@
-package com.fahd.adopting.pet.application.service;
+package com.fahd.adopting.adoption.application.service;
 
-import com.fahd.adopting.pet.domain.Pet;
-import com.fahd.adopting.pet.domain.PetService;
+import com.fahd.adopting.adoption.domain.Pet;
+import com.fahd.adopting.adoption.domain.PetService;
 import org.springframework.stereotype.Service;
 
 import java.awt.print.Pageable;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PetServiceImpl implements PetService {
