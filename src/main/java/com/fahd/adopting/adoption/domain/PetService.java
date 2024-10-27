@@ -1,16 +1,19 @@
 package com.fahd.adopting.adoption.domain;
 
-import java.awt.print.Pageable;
+import com.fahd.adopting.adoption.application.dto.PetDto;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import java.util.List;
 
 public interface PetService {
 
-    List<Pet> getAll();
+    List<PetDto> getAll();
 
-    Pet getPetById(Long id);
+    PetDto getPetById(Long id);
 
-    Long save(Pet pet);
+    Long savePet(PetDto pet);
 
-    List<Pet> getPetsPaginated(Pageable pageable);
+    Page<PetDto> findWithPagination(Pageable pageable);
 
 }

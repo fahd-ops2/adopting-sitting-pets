@@ -1,12 +1,12 @@
 package com.fahd.adopting.adoption.adapters.in;
 
+import com.fahd.adopting.adoption.application.dto.PetDto;
 import com.fahd.adopting.adoption.domain.Pet;
 import com.fahd.adopting.adoption.domain.PetService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,13 +18,23 @@ public class PetController {
     private final PetService petService;
 
     @GetMapping("/")
-    public List<Pet> getPetList() {
+    public List<PetDto> getPetList() {
         return petService.getAll();
     }
 
+    @GetMapping("/page/{page}/{size}")
+    public Page<PetDto> getPetsWithPagination(@PathVariable int page, @PathVariable int size) {
+        return petService.findWithPagination(PageRequest.of(page, size));
+    }
+
     @GetMapping("/{id}")
-    public Pet getPetById(@PathVariable Long id) {
+    public PetDto getPetById(@PathVariable Long id) {
         return petService.getPetById(id);
+    }
+
+    @PostMapping("/save")
+    public Long savePet(@RequestBody PetDto pet) {
+        return petService.savePet(pet);
     }
 
 

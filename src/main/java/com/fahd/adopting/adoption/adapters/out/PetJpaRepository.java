@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface JpaPetRepository  extends JpaRepository<PetEntity, Long>, PetRepository {
+public interface PetJpaRepository extends JpaRepository<PetEntity, Long>, PetRepository {
 
     Page<PetEntity> findAll(Pageable pageable);
 }

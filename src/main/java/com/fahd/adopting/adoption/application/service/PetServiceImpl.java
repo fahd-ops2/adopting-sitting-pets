@@ -1,32 +1,46 @@
 package com.fahd.adopting.adoption.application.service;
 
-import com.fahd.adopting.adoption.domain.Pet;
+import com.fahd.adopting.adoption.adapters.out.PetEntity;
+import com.fahd.adopting.adoption.adapters.out.PetJpaRepository;
+import com.fahd.adopting.adoption.application.assembler.PetAssembler;
+import com.fahd.adopting.adoption.application.dto.PetDto;
 import com.fahd.adopting.adoption.domain.PetService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class PetServiceImpl implements PetService {
 
+    private final PetJpaRepository petJpaRepository;
+    private final PetAssembler petAssembler;
+
     @Override
-    public List<Pet> getAll() {
-        return List.of();
+    public List<PetDto> getAll() {
+        List<PetEntity> petEntities = petJpaRepository.findAll();
+        return petEntities.stream().map(petAssembler::fromEntityToDTO).toList();
     }
 
     @Override
-    public Pet getPetById(Long id) {
-        return null;
+    public PetDto getPetById(Long id) {
+        PetEntity petEntity = petJpaRepository.findById(id).orElseThrow(()-> new RuntimeException("not found pet"));
+        return petAssembler.fromEntityToDTO(petEntity);
     }
 
     @Override
-    public Long save(Pet pet) {
-        return 0L;
+    public Long savePet(PetDto pet) {
+        PetEntity petEntity = petAssembler.fromDTOToEntity(pet);
+        return petJpaRepository.save(petEntity).getId();
     }
 
     @Override
-    public List<Pet> getPetsPaginated(Pageable pageable) {
-        return List.of();
+    public Page<PetDto> findWithPagination(Pageable pageable) {
+        Page<PetEntity> petEntities = petJpaRepository.findAll(pageable);
+        return petEntities.map(petAssembler::fromEntityToDTO);
     }
+
 }
