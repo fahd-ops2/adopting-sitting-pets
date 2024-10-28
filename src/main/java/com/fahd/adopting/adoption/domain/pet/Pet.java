@@ -1,13 +1,13 @@
-package com.fahd.adopting.sitting.domain;
+package com.fahd.adopting.adoption.domain.pet;
 
 import lombok.*;
 
 @AllArgsConstructor @NoArgsConstructor @Getter @Setter @Builder
-public class Sitter {
+public class Pet {
 
     private Long id;
     private String name;
-    private String experience;
-    private String location;
+    private String breed;
+    private String age;
     private String imageUrl;
 }

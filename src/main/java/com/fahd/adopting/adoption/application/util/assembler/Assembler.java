@@ -1,4 +1,4 @@
-package com.fahd.adopting.shared.util;
+package com.fahd.adopting.adoption.application.util.assembler;
 
 public interface Assembler<Domain, Entity, DTO> {
 

@@ -1,4 +1,4 @@
-package com.fahd.adopting.adoption.domain;
+package com.fahd.adopting.adoption.domain.pet;
 
 import com.fahd.adopting.adoption.application.dto.PetDto;
 import org.springframework.data.domain.Page;

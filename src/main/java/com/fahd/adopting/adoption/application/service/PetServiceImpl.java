@@ -1,10 +1,10 @@
 package com.fahd.adopting.adoption.application.service;
 
-import com.fahd.adopting.adoption.adapters.out.PetEntity;
-import com.fahd.adopting.adoption.adapters.out.PetJpaRepository;
-import com.fahd.adopting.adoption.application.assembler.PetAssembler;
+import com.fahd.adopting.adoption.adapters.out.jpa.PetEntity;
+import com.fahd.adopting.adoption.adapters.out.jpa.PetJpaRepository;
+import com.fahd.adopting.adoption.application.util.assembler.PetAssembler;
 import com.fahd.adopting.adoption.application.dto.PetDto;
-import com.fahd.adopting.adoption.domain.PetService;
+import com.fahd.adopting.adoption.domain.pet.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

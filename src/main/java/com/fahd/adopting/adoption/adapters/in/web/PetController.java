@@ -1,8 +1,7 @@
-package com.fahd.adopting.adoption.adapters.in;
+package com.fahd.adopting.adoption.adapters.in.web;
 
 import com.fahd.adopting.adoption.application.dto.PetDto;
-import com.fahd.adopting.adoption.domain.Pet;
-import com.fahd.adopting.adoption.domain.PetService;
+import com.fahd.adopting.adoption.domain.pet.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

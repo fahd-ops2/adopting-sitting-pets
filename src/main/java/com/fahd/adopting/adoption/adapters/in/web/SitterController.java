@@ -1,6 +1,6 @@
-package com.fahd.adopting.sitting.adapter.in;
+package com.fahd.adopting.adoption.adapters.in.web;
 
-import com.fahd.adopting.sitting.domain.Sitter;
+import com.fahd.adopting.adoption.domain.sitter.Sitter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

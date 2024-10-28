@@ -1,4 +1,4 @@
-package com.fahd.adopting.adoption.adapters.out;
+package com.fahd.adopting.adoption.adapters.out.jpa;
 
 
 import jakarta.persistence.*;
@@ -22,6 +22,6 @@ public class PetEntity {
     @Column
     private String age;
 
-    @Column
+    @Column(name = "image_url")
     private String imageUrl;
 }

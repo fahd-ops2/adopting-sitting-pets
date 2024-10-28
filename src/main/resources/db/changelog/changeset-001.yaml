@@ -25,5 +25,5 @@ databaseChangeLog:
                   name: age
                   type: VARCHAR(255)
               - column:
-                  name: imageUrl
+                  name: image_url
                   type: VARCHAR(255)

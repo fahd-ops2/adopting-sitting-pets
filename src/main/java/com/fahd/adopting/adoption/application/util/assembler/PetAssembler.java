@@ -1,10 +1,11 @@
-package com.fahd.adopting.adoption.application.assembler;
+package com.fahd.adopting.adoption.application.util.assembler;
 
-import com.fahd.adopting.adoption.adapters.out.PetEntity;
+import com.fahd.adopting.adoption.adapters.out.jpa.PetEntity;
 import com.fahd.adopting.adoption.application.dto.PetDto;
-import com.fahd.adopting.adoption.domain.Pet;
-import com.fahd.adopting.shared.util.Assembler;
+import com.fahd.adopting.adoption.domain.pet.Pet;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PetAssembler implements Assembler<Pet, PetEntity, PetDto> {
 
     @Override

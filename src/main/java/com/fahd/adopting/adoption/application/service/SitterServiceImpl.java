@@ -1,7 +1,7 @@
-package com.fahd.adopting.sitting.application.service;
+package com.fahd.adopting.adoption.application.service;
 
-import com.fahd.adopting.sitting.domain.Sitter;
-import com.fahd.adopting.sitting.domain.SitterService;
+import com.fahd.adopting.adoption.domain.sitter.Sitter;
+import com.fahd.adopting.adoption.domain.sitter.SitterService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

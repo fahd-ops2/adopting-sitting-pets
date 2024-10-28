@@ -1,4 +1,4 @@
-package com.fahd.adopting.sitting.adapter.out;
+package com.fahd.adopting.adoption.adapters.out.jpa;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
